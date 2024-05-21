@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,8 +26,19 @@ export default function RootLayout({
         )}
       >
         <main className="relative flex flex-col min-h-screen">
+          <div className="gradient-01 absolute inset-0 z-50 h-20 w-1/2"></div>
+          <div className="gradient-03 z-0"></div>
+
           <Navbar />
-          <div className="flex-grow flex-1">{children}</div>
+          <div className="flex-grow flex-1 text-white">
+            <Image
+              src="/Grid-PNG-File.png"
+              fill
+              alt=""
+              className="opacity-25"
+            />
+            {children}
+          </div>
         </main>
       </body>
     </html>
