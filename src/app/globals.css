@@ -74,3 +74,45 @@
       @apply bg-background text-foreground;
     }
   }
+
+  .gradient-01 {
+    background-image: linear-gradient(270deg,#00d4ff,#aec0f8 26%,#0084ff 39%,#fff 50%,#c643ea 61%,#6289df 74%,#91e0fa);
+    filter: blur(150px)
+}
+
+.gradient-02 {
+    width: 20%;
+    height: 30%;
+    top: 0;
+    background: #009dff;
+    filter: blur(190px)
+}
+
+.gradient-02,.gradient-03 {
+    position: absolute;
+    right: 10%
+}
+
+.gradient-03 {
+    width: 50%;
+    height: 10%;
+    bottom: 0;
+    background: #2fcbd6;
+    filter: blur(240px)
+}
+
+.gradient-04 {
+    position: absolute;
+    width: 50%;
+    height: 20%;
+    left: 10%;
+    top: 40%;
+    background: rgba(45,72,152,.75);
+    filter: blur(100px);
+    transform: rotate(12deg)
+}
+
+.gradient-05 {
+    background: linear-gradient(180deg,hsla(0,0%,100%,.04),hsla(0,0%,100%,0))
+}
+
