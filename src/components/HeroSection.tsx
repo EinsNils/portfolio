@@ -8,7 +8,7 @@ const HeroSection = () => {
           Nice to meet you! 👋
           <br />{" "}
           <span className="underline underline-offset-8 decoration-green-500">
-            I'm Nils.
+            I&apos;m Nils.
           </span>
         </h1>
         <p className="md:w-96 text-lg text-gray-300">
