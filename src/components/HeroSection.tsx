@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Title from "./Title";
 
 const HeroSection = () => {
   return (
@@ -17,7 +18,7 @@ const HeroSection = () => {
 
         <Link href="mailto:nilszentgraf@aol.com" className="inline-block">
           <div>
-            <h1 className="text-3xl font-bold">Contact Me 📬</h1>
+            <Title title="Contact Me 📬"/>
           </div>
         </Link>
       </div>

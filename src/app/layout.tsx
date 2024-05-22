@@ -26,7 +26,6 @@ export default function RootLayout({
       >
         <main className="relative flex flex-col min-h-screen">
           <div className="gradient-01 absolute inset-0 z-50 h-20 w-1/2"></div>
-          <div className="gradient-03 z-0"></div> 
 
           <div className="flex-grow flex-1 text-white">
             {children}
