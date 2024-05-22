@@ -12,9 +12,7 @@ const HeroSection = () => {
           </span>
         </h1>
         <p className="md:w-96 text-lg text-gray-300">
-          {
-            "Based in Cambodia, I'm a Fullstack developer passionate about building a modern web application that users love."
-          }
+        I am currently training to become an application developer. In my free time, I focus on <span className="text-green-500 font-bold">Web</span> and <span className="text-green-500 font-bold">IOS</span> development.
         </p>
 
         <Link href="mailto:nilszentgraf@aol.com" className="inline-block">
