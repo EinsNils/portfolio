@@ -3,7 +3,7 @@ import Title from "./Title";
 
 const HeroSection = () => {
   return (
-    <div className="min-h-[60vh] flex flex-col-reverse gap-14 lg:gap-0 lg:flex-row items-center justify-between">
+    <div className="min-h-[60vh] flex flex-col-reverse gap-14 lg:gap-0 lg:flex-row items-center justify-between animate-move-up">
       <div className="space-y-10 text-center lg:text-left">
         <h1 className="text-4xl lg:text-7xl font-bold">
           Nice to meet you! 👋
@@ -13,12 +13,14 @@ const HeroSection = () => {
           </span>
         </h1>
         <p className="md:w-96 text-lg text-gray-300">
-        I am currently training to become an application developer. In my free time, I focus on <span className="text-green-500 font-bold">Web</span> and <span className="text-green-500 font-bold">IOS</span> development.
+          I am currently training to become an developer. In my free time, I
+          focus on <span className="text-green-500 font-bold">Web</span> and{" "}
+          <span className="text-green-500 font-bold">IOS</span> development.
         </p>
 
         <Link href="mailto:nilszentgraf@aol.com" className="inline-block">
           <div>
-            <Title title="Contact Me 📬"/>
+            <Title title="Contact Me 📬" />
           </div>
         </Link>
       </div>

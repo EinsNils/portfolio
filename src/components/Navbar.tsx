@@ -3,8 +3,9 @@ import { SiGithub } from "react-icons/si";
 import { SiLinkedin } from "react-icons/si";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
-const Navbar = () => {
+const Navbar = ({ className }: { className?: string }) => {
   const socials = [
     {
       link: "https://www.linkedin.com/in/nils-zentgraf-63a434261/",
@@ -24,7 +25,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="py-10 flex justify-between items-center">
+    <nav className={cn("py-10 flex justify-between items-center animate-move-down", className)}>
       <h1 className="text-3xl font-bold underline underline-offset-8 decoration-green-500 -rotate-2">
         Nils Zentgraf
       </h1>
@@ -34,7 +35,7 @@ const Navbar = () => {
 
           return (
             <Link href={social.link} key={index} aria-label={social.label}>
-              <Icon className="w-5 h-5 hover:scale-125 transition-all"/>
+              <Icon className="w-5 h-5 hover:scale-125 transition-all" />
             </Link>
           );
         })}

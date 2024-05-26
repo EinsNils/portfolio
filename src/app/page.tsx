@@ -1,10 +1,12 @@
+import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import Navbar from "@/components/Navbar";
+import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 
 export default function Home() {
   return (
-    <div className="min-h-[400px] bg-black overflow-hidden">
+    <div className="min-h-screen bg-black">
       <div className="bg-black bg-grid-white/[0.09] relative">
         <div className="max-w-7xl mx-auto p-5">
           <Navbar />
@@ -15,8 +17,15 @@ export default function Home() {
 
       <div className="max-w-7xl mx-auto p-5 mt-20">
         <Skills />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <Projects />
+        <Footer />
       </div>
     </div>
   );
 }
-

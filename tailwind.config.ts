@@ -1,3 +1,5 @@
+import { transform } from "next/dist/build/swc";
+import { MdOpacity } from "react-icons/md";
 import type { Config } from "tailwindcss";
 
 const svgToDataUri = require("mini-svg-data-uri");
@@ -66,6 +68,26 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        "move-up": {
+          from: {
+            transform: "translateY(10px)",
+            opacity: 0,
+          },
+          to: {
+            transform: "translateY(0px)",
+            opacity: 1,
+          },
+        },
+        "move-down": {
+          from: {
+            transform: "translateY(-10px)",
+            opacity: 0,
+          },
+          to: {
+            transform: "translateY(0px)",
+            opacity: 1,
+          },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -82,52 +104,54 @@ const config = {
       },
       animation: {
         scroll:
-          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+        "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "move-up": "move-up 1s linear forwards",
+        "move-down": "move-down 1s linear forwards",
       },
     },
   },
   //require("tailwindcss-animate"),
   plugins: [
-		// ...other plugins
-		require("tailwindcss-animate"),
-		addVariablesForColors,
-		function ({ matchUtilities, theme }: any) {
-			matchUtilities(
-				{
-					'bg-grid': (value: any) => ({
-						backgroundImage: `url("${svgToDataUri(
-							`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`
-						)}")`
-					}),
-					'bg-grid-small': (value: any) => ({
-						backgroundImage: `url("${svgToDataUri(
-							`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="8" height="8" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`
-						)}")`
-					}),
-					'bg-dot': (value: any) => ({
-						backgroundImage: `url("${svgToDataUri(
-							`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" id="pattern-circle" cx="10" cy="10" r="1.6257413380501518"></circle></svg>`
-						)}")`
-					})
-				},
-				{ values: flattenColorPalette(theme('backgroundColor')), type: 'color' }
-			);
-		}
-	]
+    // ...other plugins
+    require("tailwindcss-animate"),
+    addVariablesForColors,
+    function ({ matchUtilities, theme }: any) {
+      matchUtilities(
+        {
+          "bg-grid": (value: any) => ({
+            backgroundImage: `url("${svgToDataUri(
+              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`
+            )}")`,
+          }),
+          "bg-grid-small": (value: any) => ({
+            backgroundImage: `url("${svgToDataUri(
+              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="8" height="8" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`
+            )}")`,
+          }),
+          "bg-dot": (value: any) => ({
+            backgroundImage: `url("${svgToDataUri(
+              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" id="pattern-circle" cx="10" cy="10" r="1.6257413380501518"></circle></svg>`
+            )}")`,
+          }),
+        },
+        { values: flattenColorPalette(theme("backgroundColor")), type: "color" }
+      );
+    },
+  ],
 };
 
 // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
 function addVariablesForColors({ addBase, theme }: any) {
-	let allColors = flattenColorPalette(theme('colors'));
-	let newVars = Object.fromEntries(
-		Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
-	);
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
 
-	addBase({
-		':root': newVars
-	});
+  addBase({
+    ":root": newVars,
+  });
 }
 
 export default config;
