@@ -24,7 +24,7 @@ export default function Projects() {
   ];
 
   return (
-    <div className="py-10 p-5 sm:p-0">
+    <div className="py-10 p-5 sm:p-0 mt-20">
       <Title
         title="Projects"
         className="flex flex-col justify-center items-center"

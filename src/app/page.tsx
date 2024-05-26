@@ -17,12 +17,6 @@ export default function Home() {
 
       <div className="max-w-7xl mx-auto p-5 mt-20">
         <Skills />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
         <Projects />
         <Footer />
       </div>
