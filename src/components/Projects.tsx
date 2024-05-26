@@ -8,23 +8,23 @@ import { SiReact, SiTailwindcss } from "react-icons/si";
 export default function Projects() {
   const projects = [
     {
-      title: "E-Leaning Platform",
+      title: "Portfolio Website",
       tech: [SiReact, SiTailwindcss],
-      link: "",
+      link: "nilszentgraf.dev",
       cover: "/Screenshot 2024-05-26 142139.png",
       background: "bg-indigo-500",
     },
     {
-      title: "E-Leaning Platform",
-      tech: [SiReact, SiTailwindcss],
+      title: "Soon...",
+      tech: [],
       link: "",
-      cover: "/Screenshot 2024-05-26 142139.png",
+      cover: "/Screenshot 2024-05-26 152644.png",
       background: "bg-indigo-500",
     },
   ];
 
   return (
-    <div className="py-10 p-5 sm:p-0 mt-20">
+    <div className="py-10 p-5 sm:p-0">
       <Title
         title="Projects"
         className="flex flex-col justify-center items-center"
@@ -34,10 +34,10 @@ export default function Projects() {
         {projects.map((projects, index) => {
           return (
             <Link href={projects.link} key={index}>
-              <div className={cn("p-5 rounded-md", projects.background)}>
+              <div className={cn("p-2 rounded-md", projects.background)}>
                 <DirectionAwareHover
                   imageUrl={projects.cover}
-                  className="w-full space-y-5 cursor-pointer"
+                  className="w-full space-y-5 cursor-pointer h-[150px] sm:h-[130px] md:h-[160px] lg:h-[230px] xl:h-[250px]"
                 >
                   <div className="space-y-5">
                     <h1 className="font-bold text-2xl">{projects.title}</h1>
