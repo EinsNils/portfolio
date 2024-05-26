@@ -19,7 +19,7 @@ export default function Projects() {
       tech: [],
       link: "",
       cover: "/Screenshot 2024-05-26 152644.png",
-      background: "bg-indigo-500",
+      background: "bg-green-500",
     },
   ];
 
