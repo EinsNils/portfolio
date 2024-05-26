@@ -25,22 +25,29 @@ const Footer = ({ className }: { className?: string }) => {
   ];
 
   return (
-    <nav className={cn("py-10 flex justify-between items-center animate-move-down", className)}>
-      <h1 className="text-1xl font-bold underline underline-offset-8 decoration-green-500">
-        Nils Zentgraf © 2024
-      </h1>
-      <div className="flex items-center gap-5">
-        {socials.map((social, index) => {
-          const Icon = social.Icon;
+    <div className="border-t mt-10">
+      <nav
+        className={cn(
+          "py-10 flex justify-between items-center",
+          className
+        )}
+      >
+        <h1 className="text-1xl font-bold underline underline-offset-8 decoration-green-500">
+          Nils Zentgraf © 2024
+        </h1>
+        <div className="flex items-center gap-5">
+          {socials.map((social, index) => {
+            const Icon = social.Icon;
 
-          return (
-            <Link href={social.link} key={index} aria-label={social.label}>
-              <Icon className="w-5 h-5 hover:scale-125 transition-all" />
-            </Link>
-          );
-        })}
-      </div>
-    </nav>
+            return (
+              <Link href={social.link} key={index} aria-label={social.label}>
+                <Icon className="w-5 h-5 hover:scale-125 transition-all" />
+              </Link>
+            );
+          })}
+        </div>
+      </nav>
+    </div>
   );
 };
 
